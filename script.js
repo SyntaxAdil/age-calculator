@@ -32,11 +32,22 @@ if(resultMonth<0){
     resultYear--;
     resultMonth+=12;
 }
+if(birthYear>todayYear ){
+    alert("All the best for your future birth");
+    return;
+}
 // DOM manupulation
 document.getElementById("year-in").innerHTML=resultYear;
 document.getElementById("month-in").innerHTML=resultMonth;
 document.getElementById("day-in").innerHTML=resultDay;
 })
+// enter key
+document.getElementById("dob-in").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("cal-btn").click();
+    }
+});
+
 
 // reset 
 document.getElementById("rst-btn").addEventListener("click", () => {
